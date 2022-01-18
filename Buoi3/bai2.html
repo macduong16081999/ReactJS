@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style_bai2.css" />
+    <title>Bai 2</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+    <script type="text/javascript">
+      function validateForm() {
+        var fullname = document.getElementById("fullname").value;
+        var address = document.getElementById("address").value;
+        var phone = document.getElementById("phone").value;
+        if (fullname == "") {
+          alert("Please enter your Username");
+          return false;
+        }
+        if (address == "") {
+          alert("Please enter your Address");
+          return false;
+        }
+        if (phone == "") {
+          alert("Please enter your Phone");
+          return false;
+        }
+        alert("All datas are valid!, send it to the server!");
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Đăng ký du lịch</h2>
+      <form
+        action="./successfull.html"
+        method="POST"
+        onsubmit="return validateForm()"
+      >
+        <table style="width: 30%">
+          <tr>
+            <td>FullName</td>
+            <td><input name="fullname" id="fullname" type="text" /></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td><input name="address" id="address" type="text" /></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><input name="phone" type="number" id="phone" /></td>
+          </tr>
+          <tr>
+            <td>Vietnamese guests</td>
+            <td>
+              <input
+                type="checkbox"
+                placeholder="Vietnamese guests"
+                value="guest"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Choose tour</td>
+            <td>
+              <select name="tours" id="tours">
+                <optgroup label="Miền Bắc">
+                  <option value="NhaTrang">Nha Trang - Đà Lạt</option>
+                  <option value="BuonMeThuot">
+                    Buôn Mê Thuột - Gia Lai - Kontum
+                  </option>
+                </optgroup>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Vehicle</td>
+            <td>
+              <input
+                type="radio"
+                id="plane"
+                name="fav_language"
+                value="plane"
+              />
+              <label for="plane">Plane</label>
+              <input type="radio" id="car" name="fav_language" value="car" />
+              <label for="car">Car</label>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="
+                border-right-style: none;
+                text-align: center;
+                margin-left: 20px;
+              "
+            >
+              <p>Choose age</p>
+              <label>Nguoi lon</label
+              ><input name="person" type="text" id="person" />
+              <label>Tre em</label
+              ><input name="children" type="text" id="children" />
+            </td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td><textarea id="note" name="note"></textarea></td>
+          </tr>
+          <tr>
+            <td style="border-right-style: none; margin-left: 50px">
+              <button type="submit">Login</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
